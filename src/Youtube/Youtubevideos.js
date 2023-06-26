@@ -4,8 +4,11 @@ import "./Youtube.css";
 function Youtube() {
   const [youTubeVideos, setVideo] = useState([]);
 
+  // const apikey = process.env.API_KEY;
+
   useEffect(() => {
     fetch(
+      // `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${process.env.REACT_APP_CHANNEL_ID}&maxResults=9&order=date&key=${process.env.REACT_APP_API_KEY}`
       "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=9&order=date&key=AIzaSyCawXe0GoCKpxEajAB8AHqK3hmTZtb8Z2s"
     )
       .then((response) => response.json())
